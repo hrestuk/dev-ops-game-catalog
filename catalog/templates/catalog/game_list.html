@@ -1,0 +1,24 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}Каталог ігор | Game Catalog{% endblock %}
+
+{% block content %}
+<h1>Каталог ігор</h1>
+<p>Список ігор, збережених у базі даних.</p>
+
+{% for game in games %}
+    <div class="card">
+        <h2>{{ game.title }}</h2>
+        <p><strong>Жанр:</strong> {{ game.genre }}</p>
+        <p>
+            <strong>Рік випуску:</strong>
+            {{ game.release_year|default:"Не вказано" }}
+        </p>
+        <p>{{ game.description|default:"Опис відсутній." }}</p>
+    </div>
+{% empty %}
+    <div class="card">
+        <p>У каталозі поки немає ігор. Додай їх через адмін-панель.</p>
+    </div>
+{% endfor %}
+{% endblock %}

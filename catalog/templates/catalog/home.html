@@ -1,0 +1,14 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}Головна | Game Catalog{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Ласкаво просимо до Game Catalog!</h1>
+    <p>Відкривай нові ігри, переглядай жанри та знайомся
+       з каталогом комп'ютерних ігор.</p>
+    <a class="button" href="{% url 'game_list' %}">
+        Переглянути каталог
+    </a>
+</div>
+{% endblock %}
